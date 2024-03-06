@@ -6,8 +6,7 @@ public class Main {
         Pokemon novoPokemon;
         Pokemon outroPokemon;
 
-        novoPokemon = new Pokemon("Pikachu", "Elétrico", "Choque do Trovão",
-                31);
+        novoPokemon = new Pokemon("Pikachu", "Elétrico", "Choque do Trovão", 31);
         novoPokemon.atacar();
 
         outroPokemon = new Pokemon("Squirtle", "Aquático", "Surfe", 34);
