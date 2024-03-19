@@ -78,11 +78,21 @@ public class Datas
     }
 
     public void avancaUmDia(){
-        this.Dia += 1;
+        if ((this.Dia + 1) > 30){
+            setDia(1);
+            avancaUmMes();
+        } else {
+            setDia(this.Dia += 1);
+        }
     }
 
     public void avancaUmMes(){
-        this.Mes += 1;
+        if((this.Mes + 1) > 12){
+            setMes(1);
+            avancaUmAno();
+        } else {
+            this.Mes += 1;
+        }
     }
 
     public void avancaUmAno(){
@@ -90,11 +100,27 @@ public class Datas
     }
 
     public void avancaDia(Integer qtdDias){
-        this.Dia += qtdDias;
+        Integer diasRestantes, diaReal;
+        if((this.Dia + qtdDias) > 30){
+            diasRestantes = 30 - this.Dia;
+            diaReal = qtdDias - diasRestantes;
+            setDia(diaReal);
+            avancaUmMes();
+        } else {
+            this.Dia += qtdDias;
+        }
     }
 
     public void avancaMes(Integer qtdMeses){
-        this.Mes += qtdMeses;
+        Integer mesesRestantes, mesReal;
+        if((this.Mes + qtdMeses) > 12){
+            mesesRestantes = 12 - this.Mes;
+            mesReal = qtdMeses - mesesRestantes;
+            setMes(mesReal);
+            avancaUmAno();
+        } else {
+            this.Mes += qtdMeses;
+        }
     }
 
     public void avancaAno(Integer qtdAnos){

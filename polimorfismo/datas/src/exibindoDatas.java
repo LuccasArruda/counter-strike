@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class exibindoDatas {
     public static void main(String[] args) {
-        Datas Data, Data2;
+        Datas Data, Data2, Data3;
 
         System.out.println("====================================");
         System.out.println("              DataValdo             ");
@@ -56,12 +56,22 @@ public class exibindoDatas {
         System.out.println(Data2.retornaDataAtual());
 
         System.out.println("Avança uma quantidade de meses definida (nova data): ");
-        Data2.avancaMes(1);
+        Data2.avancaMes(3);
         System.out.println(Data2.retornaDataAtual());
 
         System.out.println("Avança uma quantidade de anos definidos (nova data): ");
         Data2.avancaAno(324);
         System.out.println(Data2.retornaDataAtual());
 
+        System.out.println("Controle de datas que estrapolam o dia máximo: ");
+        Data3 = new Datas(21, 11, 2000);
+        System.out.println(Data3.retornaDataAtual());
+        System.out.println("Avancei 20 dias, portanto o mês deverá incrementar: ");
+        Data3.avancaDia(20);
+        System.out.println(Data3.retornaDataAtual());
+
+        System.out.println("Avancando Meses que estrapolam o limite: ");
+        Data3.avancaMes(2);
+        System.out.println(Data3.retornaDataAtual());
     }
 }
