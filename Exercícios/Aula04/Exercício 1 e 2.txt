@@ -1,0 +1,5 @@
+Exercício 1:
+A)
+
+Exercício 2:
+pois a sobrecarga de métodos consiste na redeclaração de métodos com o mesmo nome, porém com assinaturas diferentes;

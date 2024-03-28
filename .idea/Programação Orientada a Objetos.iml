@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/java/atributos-metodos-encapsulamento/aula02/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/java/atributos-metodos-encapsulamento/projeto-pokemon/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/java/atributos-metodos-encapsulamento/ExercicioAluno/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/java/atributos-metodos-encapsulamento/ExercicioMagnata/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/java/Construtores e Referencia/Carros/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/java/polimorfismo/datas/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Exercícios/Aula05/futebol/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Exercícios/Aula05/fogão/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/java/atributos-metodos-encapsulamento/ExercicioAluno/out" />
+      <excludeFolder url="file://$MODULE_DIR$/java/atributos-metodos-encapsulamento/ExercicioMagnata/out" />
+      <excludeFolder url="file://$MODULE_DIR$/java/atributos-metodos-encapsulamento/projeto-pokemon/out" />
+      <excludeFolder url="file://$MODULE_DIR$/java/Construtores e Referencia/Carros/out" />
+      <excludeFolder url="file://$MODULE_DIR$/java/polimorfismo/datas/out" />
+      <excludeFolder url="file://$MODULE_DIR$/Exercícios/Aula05/futebol/out" />
+      <excludeFolder url="file://$MODULE_DIR$/Exercícios/Aula05/fogão/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/annotations/24.0.0/annotations-24.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>
