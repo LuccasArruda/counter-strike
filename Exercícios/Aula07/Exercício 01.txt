@@ -1,0 +1,26 @@
+Exercício 01:
+Classe: Livro
+Atributos: 
+- Título 
+- Nome do Autor 
+- Ano de Publicação 
+- Gênero
+
+Métodos: 
+- Getters e setters para cada propriedade 
+- Construtor com recebendo todos os atributos 
+- informaçõesLivro: retorna todas as informações do livro
+
+Classe: Biblioteca
+Atributos:
+- Nome Biblioteca
+- Acervo: Lista de Objetos livros
+
+Métodos:
+- Getters e Setters para todos os atributos
+- IncrementaAcervo: recebe um objeto do tipo livro para ser adicionado ao acervo
+- IncrementaAcervo: recebe uma lista de objetos do tipo livro para serem adicionados ao acervo (sobrecarga de métodos)
+- BuscaLivro: recebe um nome de autor e retorna uma lista com os livros do autor
+- BuscaLivro: recebe um gênero literário e retorna uma lista com os livros do gênero
+- BuscaLivro: recebe um autor e um gênero e retorna uma lista com os livros do autor
+- VisualizarAcervo: lista todos os livros do acervo utilizando o método InformaçoesLivro do objeto livro

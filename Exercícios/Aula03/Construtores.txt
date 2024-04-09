@@ -1,7 +1,0 @@
-Exercício 01:
-Construtores são métodos chamados assim que instanciamos um objeto e 
-serrvem para iniciarmos uma classe com atributos já definidos, podemos também incluir métodos nos construtores;
-Podemos tomar como exemplo uma conta de um banco de investimentos que, ao abrí-la, o titular já começa com um saldo de 500 reais para realizar um investimento e testar a plataforma;
-
-Exercício 02:
-Os construtores de uma classe se diferenciam pela sobrecarga de métodos, então, podemos ter a quantidade de construtores correspondente à quantidade de chamadas diferentes que podemos realizar para cada construtor, por exemplo, um construtor pode ter sua chamada recebendo um inteiro e uma string, outra chamada recebendo uma string primeiro e depois um inteiro, ou recebendo duas strings ou dois inteiros;

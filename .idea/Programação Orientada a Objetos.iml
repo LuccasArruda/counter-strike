@@ -11,6 +11,9 @@
       <sourceFolder url="file://$MODULE_DIR$/java/polimorfismo/datas/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Exercícios/Aula05/futebol/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Exercícios/Aula05/fogão/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Exercícios/Aula06/CarroExercicioAula/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Exercícios/Aula08/Carro/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Teste/Carro/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/java/atributos-metodos-encapsulamento/ExercicioAluno/out" />
       <excludeFolder url="file://$MODULE_DIR$/java/atributos-metodos-encapsulamento/ExercicioMagnata/out" />
       <excludeFolder url="file://$MODULE_DIR$/java/atributos-metodos-encapsulamento/projeto-pokemon/out" />
@@ -18,6 +21,7 @@
       <excludeFolder url="file://$MODULE_DIR$/java/polimorfismo/datas/out" />
       <excludeFolder url="file://$MODULE_DIR$/Exercícios/Aula05/futebol/out" />
       <excludeFolder url="file://$MODULE_DIR$/Exercícios/Aula05/fogão/out" />
+      <excludeFolder url="file://$MODULE_DIR$/Exercícios/Aula06/CarroExercicioAula/out" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

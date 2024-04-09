@@ -1,0 +1,4 @@
+Exercício 02:
+Três construtores
+Diferenças:
+Caso não seja passado nenhum argumento, o primeiro construtor entra em ação definindo um valor padrão ao atributo número e ao atributo texto, caso seja informado um número, o valor informado é atribuído ao atributo número e o atributo texto recebe um valor padrão e, por último, caso receba um valor inteiro e um valor do tipo string, ele inicializa o objeto Exemplo atribuindo os valores recebidos ao respectivos atributos;
