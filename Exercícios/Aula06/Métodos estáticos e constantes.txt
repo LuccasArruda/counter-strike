@@ -1,5 +1,0 @@
-Exercício 01: 
-Significa que o atributo definido como estático fica preso à classe e não ao objeto em si, podendo ser acessado sem a necessidade de criar uma variável e inicializar um objeto do tipo da classe em questão, o que também implica que o valor/função atribuído para esse método estático será sempre o mesmo para todas as instâncias do objeto;
-
-Exercício 02: 
-O método main é um método estático pelo simples fato de se fazer necessário o uso do mesmo antes de instanciar qualquer tipo de objeto, portanto, deve ser possível utilizá-lo sem instanciar sua classe, por isso o método main deve ser estático;
