@@ -1,3 +1,4 @@
+package counterStrike;
 public class Jogador {
     private String Nome;
 

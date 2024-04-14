@@ -1,23 +1,58 @@
+package counterStrike;
+
 import java.util.ArrayList;
 
 public class Campeonato {
     private Time Ganhador;
     private ArrayList<Time> Times;
-    private final ArrayList<Partida> Partidas;
+    private ArrayList<Partida> Partidas;
     private static final int FasesCampeonato = 4;
-    private int FaseCampeonatoAtual;
+    private int FaseAtualCampeonato;
     private int PartidasFinalizadas;
 
+    //========================================
+    //             Constructor
+    //========================================
     public Campeonato(ArrayList<Time> timesCampeonato){
         setTimes(timesCampeonato);
         this.Partidas = new ArrayList<Partida>();
         this.PartidasFinalizadas = 0;
-        setFaseCampeonatoAtual(1);
+        setFaseAtualCampeonato(1);
         iniciaPartidas(getTimes());
     }
 
-    public void setFaseCampeonatoAtual(int faseCampeonatoAtual) {
-        this.FaseCampeonatoAtual = faseCampeonatoAtual;
+    //========================================
+    //                Getters
+    //========================================
+    public Time getGanhador() {
+        return this.Ganhador;
+    }
+
+    public ArrayList<Time> getTimes() {
+        return this.Times;
+    }
+
+    public ArrayList<Partida> getPartidas() {
+        return this.Partidas;
+    }
+
+    public int getFaseAtualCampeonato() {
+        return FaseAtualCampeonato;
+    }
+
+    private int getPartidasFinalizadas() {
+        return PartidasFinalizadas;
+    }
+
+    public static int getFasesCampeonato() {
+        return FasesCampeonato;
+    }
+
+    //========================================
+    //                Setters
+    //========================================
+    public void setFaseAtualCampeonato(int faseAtualCampeonato) {
+        this.FaseAtualCampeonato = faseAtualCampeonato;
     }
 
     private void setPartidasFinalizadas(int partidasFinalizadas) {
@@ -40,30 +75,9 @@ public class Campeonato {
         this.Ganhador = ganhador;
     }
 
-    public Time getGanhador() {
-        return this.Ganhador;
-    }
-
-    public ArrayList<Time> getTimes() {
-        return this.Times;
-    }
-
-    public ArrayList<Partida> getPartidas() {
-        return this.Partidas;
-    }
-
-    public int getFaseCampeonatoAtual() {
-        return FaseCampeonatoAtual;
-    }
-
-    private int getPartidasFinalizadas() {
-        return PartidasFinalizadas;
-    }
-
-    public static int getFasesCampeonato() {
-        return FasesCampeonato;
-    }
-
+    //========================================
+    //              Service
+    //========================================
     public void informacoesCampeonato(){
         int I;
         ArrayList<Partida> partidas;
@@ -90,7 +104,7 @@ public class Campeonato {
         Partida partida;
 
         System.out.println("\n===========================================");
-        System.out.println("Fase atual do campeonato: " + retornaNomeFaseCampeonato(getFaseCampeonatoAtual()));
+        System.out.println("Fase atual do campeonato: " + retornaNomeFaseCampeonato(getFaseAtualCampeonato()));
         System.out.println("===========================================");
         quantidadeTimes = times.size();
         for (I = 0; I < quantidadeTimes; I += 2){
@@ -129,7 +143,7 @@ public class Campeonato {
 
         partidas = getPartidas();
         todasPartidasFinalizaram = (retornaQuantidadePartidasFinalizadas() == partidas.size());
-        if (getFaseCampeonatoAtual() == getFasesCampeonato()){
+        if (getFaseAtualCampeonato() == getFasesCampeonato()){
             finalizaCampeonato();
         } else if (todasPartidasFinalizaram){
             avancaFaseCampeonato();
@@ -161,7 +175,7 @@ public class Campeonato {
     }
 
     private void avancaFaseCampeonato(){
-        setFaseCampeonatoAtual(this.FaseCampeonatoAtual += 1);
+        setFaseAtualCampeonato(this.FaseAtualCampeonato += 1);
     }
 
     private void finalizaCampeonato(){

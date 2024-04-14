@@ -1,3 +1,4 @@
+package counterStrike;
 public class Partida {
     private int RodadaAtual;
     private Time ContraTerroristas;
