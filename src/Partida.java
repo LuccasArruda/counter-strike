@@ -13,7 +13,7 @@ public class Partida {
         setRodadasGanhasTerroristas(0);
         setRodadasGanhasContraTerroristas(0);
         setRodadaAtual(0);
-
+        setStatusPartida("Em Progresso");
     }
 
     public void setStatusPartida(String statusPartida) {
@@ -26,6 +26,7 @@ public class Partida {
             if (rodadaAtual == 30){
                 System.out.println("\nPartida Encerrada!");
                 defineGanhador();
+                setStatusPartida("Finalizada");
                 informacoesPartida();
             }
         } else {
@@ -100,9 +101,10 @@ public class Partida {
     }
 
     public void informacoesPartida(){
-        System.out.println("Informações da Partida:");
-        System.out.println("Contra-Terroristas: " + getRodadasGanhasContraTerroristas());
-        System.out.println("Terroristas: " + getRodadasGanhasTerroristas());
+        System.out.println("\nInformações da Partida:");
+        System.out.println("Contra-Terroristas: " + getContraTerroristas().getNome());
+        System.out.println("Terroristas: " + getTerroristas().getNome());
+        System.out.println("Placar: TR-" + getRodadasGanhasTerroristas() + " | CT-" + getRodadasGanhasContraTerroristas());
         System.out.println("Rodada: " + getRodadaAtual());
         if (this.Ganhador != null){
             System.out.println("Ganhador: " + getGanhador().getNome());

@@ -8,9 +8,9 @@ public class Main {
         Jogador Jogador4;
         ArrayList<Jogador> JogadoresA;
         ArrayList<Jogador> JogadoresB;
-        Time TimeB;
-        Time TimeA;
+        ArrayList<Time> Times;
         Partida Partida;
+        Campeonato Campeonato;
 
         Jogador1 = new Jogador("FalleN");
         Jogador2 = new Jogador("HEN1");
@@ -25,13 +25,17 @@ public class Main {
         JogadoresB.add(Jogador3);
         JogadoresB.add(Jogador4);
 
-        TimeA = new Time("Furia", JogadoresA);
-        TimeB = new Time("Imperial", JogadoresB);
+        Times = new ArrayList<Time>();
+        Times.add(new Time("Furia", JogadoresA));
+        Times.add(new Time("Imperial", JogadoresB));
+        Times.add(new Time("Gerino", JogadoresB));
+        Times.add(new Time("Laner", JogadoresA));
 
-        Partida = new Partida(TimeA, TimeB);
-        Partida.setRodadasGanhasContraTerroristas(29);
-        Partida.informacoesPartida();
-        Partida.setRodadasGanhasTerroristas(1);
-
+        Campeonato = new Campeonato(Times);
+        Campeonato.getPartidas().get(0).setRodadasGanhasTerroristas(30);
+        Campeonato.getPartidas().get(1).setRodadasGanhasContraTerroristas(30);
+        Campeonato.atualizaCampeonato();
+        Campeonato.getPartidas().get(2).setRodadasGanhasContraTerroristas(30);
+        Campeonato.atualizaCampeonato();
     }
 }
