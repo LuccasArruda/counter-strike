@@ -3,20 +3,25 @@ import java.util.ArrayList;
 public class Campeonato {
     private Time Ganhador;
     private ArrayList<Time> Times;
-    private ArrayList<Partida> Partidas;
-    private static final int FasesCampeonato = 20;
+    private final ArrayList<Partida> Partidas;
+    private static final int FasesCampeonato = 4;
     private int FaseCampeonatoAtual;
+    private int PartidasFinalizadas;
 
     public Campeonato(ArrayList<Time> timesCampeonato){
         setTimes(timesCampeonato);
         this.Partidas = new ArrayList<Partida>();
-        System.out.println("Eliminatórias");
-        iniciaPartidas(getTimes());
+        this.PartidasFinalizadas = 0;
         setFaseCampeonatoAtual(1);
+        iniciaPartidas(getTimes());
     }
 
     public void setFaseCampeonatoAtual(int faseCampeonatoAtual) {
         this.FaseCampeonatoAtual = faseCampeonatoAtual;
+    }
+
+    private void setPartidasFinalizadas(int partidasFinalizadas) {
+        PartidasFinalizadas = partidasFinalizadas;
     }
 
     private void adicionaPartida(Partida partida){
@@ -24,10 +29,8 @@ public class Campeonato {
     }
 
     public void setTimes(ArrayList<Time> times) {
-        if ((times.size() % 2) != 0){
-            System.out.println("O número de times de um campeonato deve ser par!");
-        } else if ((times.size() > 16) || (times.size() < 4)){
-            System.out.println("Informe uma quantidade de times válida! [min: 2, max: 16]");
+        if (times.size() != 16){
+            System.out.println("Um campeonato deve ter 16 times!");
         } else {
             this.Times = times;
         }
@@ -51,6 +54,14 @@ public class Campeonato {
 
     public int getFaseCampeonatoAtual() {
         return FaseCampeonatoAtual;
+    }
+
+    private int getPartidasFinalizadas() {
+        return PartidasFinalizadas;
+    }
+
+    public static int getFasesCampeonato() {
+        return FasesCampeonato;
     }
 
     public void informacoesCampeonato(){
@@ -78,14 +89,17 @@ public class Campeonato {
         Time contraTerroristas;
         Partida partida;
 
+        System.out.println("\n===========================================");
+        System.out.println("Fase atual do campeonato: " + retornaNomeFaseCampeonato(getFaseCampeonatoAtual()));
+        System.out.println("===========================================");
         quantidadeTimes = times.size();
         for (I = 0; I < quantidadeTimes; I += 2){
             contraTerroristas = times.get(I);
             terroristas = times.get(I+1);
             partida = new Partida(terroristas, contraTerroristas);
+            System.out.println("Uma nova partida entre " + terroristas.getNome() + " e " + contraTerroristas.getNome() + " começou!");
             adicionaPartida(partida);
         }
-        informacoesCampeonato();
     }
 
     private int retornaQuantidadePartidasFinalizadas(){
@@ -101,6 +115,8 @@ public class Campeonato {
             statusPartida = partidas.get(I).getStatusPartida();
             if (statusPartida.equals("Finalizada")){
                 partidasFinalizadas++;
+            } else {
+                System.out.println("\nPartida não finalizada: " + partidas.get(I).getTerroristas().getNome() + " x " + partidas.get(I).getContraTerroristas().getNome());
             }
         }
         return partidasFinalizadas;
@@ -113,26 +129,16 @@ public class Campeonato {
 
         partidas = getPartidas();
         todasPartidasFinalizaram = (retornaQuantidadePartidasFinalizadas() == partidas.size());
-        if (getFaseCampeonatoAtual() == 2){
+        if (getFaseCampeonatoAtual() == getFasesCampeonato()){
             finalizaCampeonato();
         } else if (todasPartidasFinalizaram){
             avancaFaseCampeonato();
             timesVencedores = retornaTimesVencedores();
+            System.out.println("\nQuantidade de Times Vencedores: " + timesVencedores.size());
             iniciaPartidas(timesVencedores);
         } else {
             System.out.println("\nAinda existem partidas em andamento!\n");
         }
-    }
-
-    private void finalizaCampeonato(){
-        int ultimaPartida;
-        ArrayList<Partida> partidas;
-
-        partidas = getPartidas();
-        System.out.println("\nCampeonato finalizado!");
-        ultimaPartida = (partidas.size()-1);
-        setGanhador(partidas.get(ultimaPartida).getGanhador());
-        System.out.println("O time " + getGanhador().getNome() + " venceu!");
     }
 
     private ArrayList<Time> retornaTimesVencedores(){
@@ -145,10 +151,12 @@ public class Campeonato {
         timesVencedores = new ArrayList<Time>();
         partidas = getPartidas();
         quantidadePartidas = partidas.size();
-        for (I = 0; I < quantidadePartidas; I++){
+
+        for (I = getPartidasFinalizadas(); I < quantidadePartidas; I++){
             partidaFinalizada = partidas.get(I);
             timesVencedores.add(partidaFinalizada.getGanhador());
         }
+        setPartidasFinalizadas(quantidadePartidas);
         return timesVencedores;
     }
 
@@ -156,5 +164,29 @@ public class Campeonato {
         setFaseCampeonatoAtual(this.FaseCampeonatoAtual += 1);
     }
 
+    private void finalizaCampeonato(){
+        int ultimaPartida;
+        ArrayList<Partida> partidas;
+
+        partidas = getPartidas();
+        System.out.println("\n===========================================");
+        System.out.println("Campeonato finalizado!");
+        System.out.println("===========================================");
+        ultimaPartida = (partidas.size()-1);
+        setGanhador(partidas.get(ultimaPartida).getGanhador());
+        System.out.println("O time " + getGanhador().getNome() + " venceu!");
+    }
+
+    private String retornaNomeFaseCampeonato(int faseCampeonato){
+        if (faseCampeonato == 1){
+            return "Eliminatórias";
+        } else if (faseCampeonato == 2) {
+            return "Quartas de Final";
+        } else if (faseCampeonato == 3){
+            return "Semi-final";
+        } else {
+            return "Final";
+        }
+    }
 }
 

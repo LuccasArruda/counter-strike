@@ -56,8 +56,15 @@ public class Partida {
     }
 
     public void setRodadasGanhasTerroristas(int rodadasGanhasTerroristas) {
-        this.RodadasGanhasTerroristas = rodadasGanhasTerroristas;
-        setRodadaAtual(this.RodadaAtual += rodadasGanhasTerroristas);
+        int rodadasRestantes;
+        if (rodadasGanhasTerroristas + getRodadasGanhasContraTerroristas() > 30){
+            rodadasRestantes = (rodadasGanhasTerroristas + getRodadasGanhasContraTerroristas()) - 30;
+            this.RodadasGanhasTerroristas = rodadasRestantes;
+            setRodadaAtual(this.RodadaAtual += rodadasRestantes);
+        } else {
+            this.RodadasGanhasTerroristas = rodadasGanhasTerroristas;
+            setRodadaAtual(this.RodadaAtual += rodadasGanhasTerroristas);
+        }
     }
 
     public void setTerroristas(Time terroristas) {
